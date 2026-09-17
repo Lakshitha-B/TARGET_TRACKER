@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Target Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="welcomeScreen" class="screen active">
+      <div class="card welcome-card">
+        <div class="sun">☀️</div>
+        <h1>Target Tracker</h1>
+        <p class="subtitle">Watch the ball that appears first.</p>
+        <p class="instruction">
+          First, one ball appears.<br>
+          Then other identical balls will join.<br>
+          Watch carefully and follow the <strong>first ball</strong>.
+        </p>
+        <div class="mode-row">
+          <button id="gentleBtn" class="mode selected">Gentle Mode</button>
+          <button id="practiceBtn" class="mode">Practice</button>
+        </div>
+        <button id="startBtn" class="primary-btn">Start Game</button>
+        <button id="soundBtn" class="secondary-btn" aria-pressed="true">🔊 Sound On</button>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen">
+      <header class="game-header">
+        <button id="exitBtn" class="small-btn">Exit</button>
+        <div class="level-label">Level <span id="levelText">1</span></div>
+        <div class="score-label">Score <span id="scoreText">0</span></div>
+        <button id="pauseBtn" class="small-btn">Pause</button>
+      </header>
+
+      <div class="message-area">
+        <div id="message">Watch the first ball.</div>
+        <div class="progress-wrap">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+
+      <div id="gameArea" aria-label="Target tracking play area"></div>
+
+      <div class="bottom-help">
+        <span id="phaseText">Get ready...</span>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="card result-card">
+        <div id="resultIcon" class="result-icon">🌟</div>
+        <h2 id="resultTitle">Well done!</h2>
+        <p id="resultMessage">You found the first ball.</p>
+        <div class="result-score">Score: <strong id="finalScore">0</strong></div>
+        <button id="nextBtn" class="primary-btn">Next Round</button>
+        <button id="homeBtn" class="secondary-btn">Home</button>
+      </div>
+    </section>
+
+    <div id="pauseOverlay" class="pause-overlay hidden">
+      <div class="card">
+        <h2>Paused</h2>
+        <p>Take your time.</p>
+        <button id="continueBtn" class="primary-btn">Continue</button>
+        <button id="restartBtn" class="secondary-btn">Restart Round</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
